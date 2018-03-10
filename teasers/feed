@@ -1,0 +1,44 @@
+{% for entry in entries %}
+  <article class="teaserFeed">
+    <figure class="feed-article-image">
+      <picture>
+        <img src="{{ image.url }}" alt="{{ entry.title }}" title="{{ image.title }}">
+      </picture>
+    </figure>
+    <div class="feed-article__content">
+      <p  class="feed-article__kicker"><a href="{{ entry.url }}">{{ entry.subhead }}</a></p>
+      <h2 class="feed-article__headline"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+      <p  class="feed-article__summary">{{ entry.summary }}</p>
+      <p  class="feed-article__meta">
+          <span class="byline">An article by <a href="{{ entry.url }}">Christophero Mohenatz</a></span> 
+          <span class="timestamp">{{ entry.postdate | date(F m Y) }}</span>
+      </p>
+    </div>
+  </article>
+{% endfor %}  
+
+<style>
+  .teaserFeed               {font-size: 15px;  }
+  .teaserFeed .format       {font-size: 15px;  }
+
+.feed-article-headline        {font-size: 15px;  }
+
+.queue-article-summary {
+    margin-bottom: 12px;
+    font-family: 'PT Serif',Georgia,serif;
+    font-size: 20px;
+    color: #4c4c4c;
+    line-height: 1.5;
+}
+
+.feed-article__meta {
+    font-family: Adelle,'Helvetica Neue',Helvetica,sans-serif;
+    font-size: 14px;
+    color: #a1a1a1;
+    line-height: 18px;
+}
+  
+  .teaserFeed .credits      {font-size: 15px; color: #282828; }
+  .teaserFeed .credits a    {color:purple;  }
+  
+  </style>
